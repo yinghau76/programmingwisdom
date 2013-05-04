@@ -1,0 +1,52 @@
+// Place all the styles related to the Quotes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.quote {
+  border-bottom-color: rgb(215, 215, 215);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  .action {
+    float: right;
+
+    .btn {
+      font-size: 10px;
+      padding: 4px;
+    }
+  }
+}
+
+.quote-text {
+  font-size: 16px;
+
+  font-family: Georgia, serif;
+  font-size: 16px;
+  line-height: 2;
+  position: relative;
+  color: #383838;
+
+  &:before {
+    display: block;
+    content: "\201C";
+    font-size: 80px;
+    position: absolute;
+    left: -40px;
+    top: -45px;
+    color: #7a7a7a;
+  }
+}
+
+.quote-author {
+  color: #7a7a7a;
+}
+
+.actions {
+  margin-top: 10px;
+  .btn {
+    font-size: 10px;
+    padding: 5px;
+  }
+}

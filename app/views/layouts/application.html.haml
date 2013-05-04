@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %title Programming Wisdom
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    .navbar
+      .navbar-inner
+        .brand Programming Wisdom
+    .container
+      - if notice
+        .notice= notice
+      - if alert
+        .alert= alert
+      = yield
