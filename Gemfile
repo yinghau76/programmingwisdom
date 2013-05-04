@@ -49,3 +49,4 @@ gem 'debugger'
 
 gem 'haml'
 gem 'devise'
+gem 'rails_admin'

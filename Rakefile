@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Programmingwisdom::Application.load_tasks
+ProgrammingWisdom::Application.load_tasks

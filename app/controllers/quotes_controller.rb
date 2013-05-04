@@ -1,4 +1,11 @@
 class QuotesController < ApplicationController
+
+  before_filter :authenticate_user!, except: [:index, :show]
+
+  def authenticate_user!
+    redirect_to "/", alert: 'You dont have enough permissions to be here' unless user_signed_in?
+  end
+
   # GET /quotes
   # GET /quotes.json
   def index
