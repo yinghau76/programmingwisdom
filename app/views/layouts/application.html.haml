@@ -6,9 +6,7 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
-    .navbar
-      .navbar-inner
-        %a.brand(href="/") Programming Wisdom
+    = render 'navbar'
     .container
       - if notice
         .notice= notice

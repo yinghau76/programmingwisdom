@@ -1,0 +1,9 @@
+.quote.row
+  .quote-details
+    .quote-text
+      #{quote.text}
+    .quote-author
+      ― #{quote.author}
+      - unless quote.source.blank?
+        , #{quote.source}
+    .quoteFooter

@@ -1,12 +1,6 @@
 .quotes
   - @quotes.each do |quote|
-    .quote.row
-      .quote-details
-        .quote-text
-          #{quote.text}
-        .quote-author
-          ― #{quote.author}, #{quote.source}
-        .quoteFooter
+    = render quote
 - if user_signed_in?
   .actions.btn-group
     = link_to 'New Quote', new_quote_path, class: 'btn'
