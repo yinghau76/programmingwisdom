@@ -1,9 +1,12 @@
 .quote.row
-  .quote-details
+  .quote-details.span11
     .quote-text
       #{quote.text}
     .quote-author
       ― #{quote.author}
       - unless quote.source.blank?
         , #{quote.source}
-    .quoteFooter
+  - if user_signed_in?
+    .actions
+      = link_to 'Edit', edit_quote_path(quote), class: 'btn'
+  .quoteFooter

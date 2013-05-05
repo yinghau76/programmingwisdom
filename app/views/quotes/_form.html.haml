@@ -10,14 +10,14 @@
   .field
     = f.label :text
     %br/
-    = f.text_area :text
+    = f.text_area :text, rows: 5, class: 'input-wide'
   .field
     = f.label :author
     %br/
-    = f.text_field :author
+    = f.text_field :author, class: 'input-wide'
   .field
     = f.label :source
     %br/
-    = f.text_field :source
+    = f.text_field :source, class: 'input-wide'
   .actions
     = f.submit
