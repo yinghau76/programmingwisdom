@@ -9,7 +9,11 @@ class QuotesController < ApplicationController
   # GET /quotes
   # GET /quotes.json
   def index
-    @quotes = Quote.all
+    if q = params[:q]
+      @quotes = Quote.where("text like ?", "%#{q}%")
+    else
+      @quotes = Quote.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
