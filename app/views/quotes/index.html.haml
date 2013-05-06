@@ -1,6 +1,6 @@
-.quotes
-  - @quotes.each do |quote|
-    = render quote
 - if user_signed_in?
   .actions.btn-group
     = link_to 'New Quote', new_quote_path, class: 'btn'
+.quotes
+  - @quotes.each do |quote|
+    = render quote
