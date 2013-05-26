@@ -6,7 +6,7 @@ class CreateAuthors < ActiveRecord::Migration
     end
 
     Quote.all.each do |quote|
-      Author.where(name: quote.author).first_or_create
+      Author.where(name: quote.author).first_or_create if quote.author
     end
   end
 end
