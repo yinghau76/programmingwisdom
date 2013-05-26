@@ -11,15 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130504181018) do
+ActiveRecord::Schema.define(:version => 20130526084356) do
 
-  create_table "quotes", :force => true do |t|
-    t.text     "text"
-    t.string   "author"
-    t.string   "source"
+  create_table "authors", :force => true do |t|
+    t.string   "name",       :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "quotes", :force => true do |t|
+    t.text     "text"
+    t.string   "source"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "author_id"
+  end
+
+  add_index "quotes", ["author_id"], :name => "index_quotes_on_author_id"
 
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
@@ -27,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20130504181018) do
     t.integer  "item"
     t.string   "table"
     t.integer  "month",      :limit => 2
-    t.integer  "year",       :limit => 5
+    t.integer  "year",       :limit => 8
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
   end

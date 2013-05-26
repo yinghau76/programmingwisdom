@@ -51,6 +51,9 @@ class QuotesController < ApplicationController
   # POST /quotes
   # POST /quotes.json
   def create
+    author = Author.where(name: params[:quote][:author]).first_or_create
+    params[:quote][:author] = author
+
     @quote = Quote.new(params[:quote])
 
     respond_to do |format|
