@@ -51,9 +51,7 @@ class QuotesController < ApplicationController
   # POST /quotes
   # POST /quotes.json
   def create
-    author = Author.where(name: params[:quote][:author]).first_or_create
-    params[:quote][:author] = author
-
+    update_author_param(params)
     @quote = Quote.new(params[:quote])
 
     respond_to do |format|
@@ -71,6 +69,7 @@ class QuotesController < ApplicationController
   # PUT /quotes/1.json
   def update
     @quote = Quote.find(params[:id])
+    update_author_param(params)
 
     respond_to do |format|
       if @quote.update_attributes(params[:quote])
@@ -93,5 +92,12 @@ class QuotesController < ApplicationController
       format.html { redirect_to quotes_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def update_author_param(params)
+    author = Author.where(name: params[:quote][:author]).first_or_create
+    params[:quote][:author] = author
   end
 end
