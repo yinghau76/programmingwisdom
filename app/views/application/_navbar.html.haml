@@ -1,7 +1,0 @@
-.navbar
-  .navbar-inner
-    %a.brand(href="/") Programming Wisdom
-    = form_tag('/quotes', method: 'get', class: 'navbar-search') do
-      %input.search-query(type="text" name="q" placeholder="Search Quote")
-    %ul.nav.pull-right
-      %li= link_to 'Sign-in', user_session_path

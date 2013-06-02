@@ -45,7 +45,7 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-gem 'haml'
+gem 'slim'
 gem 'devise'
 gem 'rails_admin'
 gem 'unicorn'

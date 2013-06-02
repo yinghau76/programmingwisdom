@@ -1,12 +1,12 @@
 = form_for(@quote) do |f|
   - if @quote.errors.any?
     #error_explanation
-      %h2
+      h2
         = pluralize(@quote.errors.count, "error")
-        prohibited this quote from being saved:
-      %ul
+        | prohibited this quote from being saved:
+      ul
         - @quote.errors.full_messages.each do |msg|
-          %li= msg
+          li= msg
   .field
     = f.label :text
     = f.text_area :text, rows: 5, class: 'input-wide'
