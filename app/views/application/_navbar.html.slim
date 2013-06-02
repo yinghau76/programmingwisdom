@@ -4,4 +4,7 @@
     = form_tag('/quotes', method: 'get', class: 'navbar-search') do
       input.search-query(type="text" name="q" placeholder="Search Quote")
     ul.nav.pull-right
-      li= link_to 'Sign-in', user_session_path
+      - if user_signed_in?
+        li= link_to 'Sign-out', destroy_user_session_path, :method => :delete
+      - else
+        li= link_to 'Sign-in', user_session_path
