@@ -199,6 +199,7 @@ DEPENDENCIES
   devise
   guard-livereload
   jquery-rails
+  kaminari
   pg
   rack-livereload
   rails (= 3.2.13)
