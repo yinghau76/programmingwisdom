@@ -12,8 +12,9 @@ class QuotesController < ApplicationController
     if q = params[:q]
       @quotes = Quote.where("text like ?", "%#{q}%")
     else
-      @quotes = Quote.all
+      @quotes = Quote.order("updated_at DESC")
     end
+    @quotes = @quotes.page(params[:page]).per(10)
 
     respond_to do |format|
       format.html # index.html.erb
