@@ -3,7 +3,7 @@
   <component name="DataSourceManagerImpl" format="xml" hash="2651562638">
     <data-source source="LOCAL" name="Rails programmingwisdom: production" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="30e80930-360b-4ad0-afcd-ac8231cc383b">
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://127.0.0.1/programmingwisdom_production</jdbc-url>
+      <jdbc-url>jdbc:postgresql:db/production.sqlite3</jdbc-url>
       <user-name>patrick</user-name>
       <libraries>
         <library>
@@ -16,7 +16,7 @@
     </data-source>
     <data-source source="LOCAL" name="Rails programmingwisdom: development" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="21e0af2c-179b-4840-91dd-737f47e305d6">
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://127.0.0.1/programmingwisdom_development</jdbc-url>
+      <jdbc-url>jdbc:postgresql:programmingwisdon_development.sqlite3</jdbc-url>
       <user-name>patrick</user-name>
       <libraries>
         <library>
@@ -29,7 +29,7 @@
     </data-source>
     <data-source source="LOCAL" name="Rails programmingwisdom: test" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="bee9e441-67ba-4312-b187-1d30600da319">
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://127.0.0.1/programmingwisdom_test</jdbc-url>
+      <jdbc-url>jdbc:postgresql:programmingwisdon_test.sqlite3</jdbc-url>
       <user-name>patrick</user-name>
       <libraries>
         <library>
