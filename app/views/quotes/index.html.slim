@@ -1,6 +1,7 @@
 - if user_signed_in?
   .actions.btn-group
-    = link_to 'New Quote', new_quote_path, class: 'btn'
+    = link_to 'New Quote', new_quote_path, class: 'btn btn-primary'
 .quotes
+  = paginate @quotes
   - @quotes.each do |quote|
     = render quote

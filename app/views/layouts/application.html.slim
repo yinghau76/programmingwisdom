@@ -9,7 +9,7 @@ html
     = render 'navbar'
     .container
       - if notice
-        .notice= notice
+        .alert.alert-success= notice
       - if alert
         .alert= alert
       = yield
