@@ -12,6 +12,8 @@ group :development do
   gem 'guard-livereload', require: false
   gem 'rb-fsevent', require: false
   gem 'rack-livereload'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 gem 'pg'
