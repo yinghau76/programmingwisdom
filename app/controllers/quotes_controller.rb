@@ -98,7 +98,7 @@ class QuotesController < ApplicationController
   private
 
   def update_author_param(params)
-    author = Author.where(name: params[:quote][:author]).first_or_create
+    author = Author.where(name: params[:quote][:author_name]).first_or_create
     params[:quote][:author] = author
   end
 end
