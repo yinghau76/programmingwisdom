@@ -1,6 +1,6 @@
 - if user_signed_in?
   .actions.btn-group
     = link_to 'New Quote', new_quote_path, class: 'btn btn-primary'
-= render @quote
+= render :partial => @quote, :locals => {:quote => @quote, :footer => false}
 br
 = render :partial => 'disqus'

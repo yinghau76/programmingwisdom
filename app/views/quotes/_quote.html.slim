@@ -1,5 +1,5 @@
 .quote.row
-  .quote-details.span11
+  .quote-details
     .quote-text
       #{quote.text}
     .quote-author
@@ -7,7 +7,9 @@
         = quote.author.name
       - unless quote.source.blank?
         | , #{quote.source}
-  - if user_signed_in?
-    .actions
-      = link_to 'Edit', edit_quote_path(quote), class: 'btn'
-  .quoteFooter
+  - if footer
+    .quoteFooter
+      = link_to 'comments', quote
+      - if user_signed_in?
+        = ", "
+        = link_to('edit', edit_quote_path(quote))

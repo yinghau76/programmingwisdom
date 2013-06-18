@@ -4,4 +4,4 @@
 .quotes
   = paginate @quotes
   - @quotes.each do |quote|
-    = render quote
+    = render :partial => 'quote', :locals => {:quote => quote, :footer => true}
