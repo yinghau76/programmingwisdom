@@ -10,7 +10,7 @@ class QuotesController < ApplicationController
   # GET /quotes.json
   def index
     if q = params[:q]
-      @quotes = Quote.search(q)
+      @quotes = Quote.basic_search(q)
     else
       @quotes = Quote.order("updated_at DESC")
     end
