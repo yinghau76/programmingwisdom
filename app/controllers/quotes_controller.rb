@@ -10,7 +10,7 @@ class QuotesController < ApplicationController
   # GET /quotes.json
   def index
     if q = params[:q]
-      @quotes = Quote.where("text like ?", "%#{q}%")
+      @quotes = Quote.search(q)
     else
       @quotes = Quote.order("updated_at DESC")
     end
@@ -99,6 +99,7 @@ class QuotesController < ApplicationController
 
   def update_author_param(params)
     author = Author.where(name: params[:quote][:author_name]).first_or_create
+    params[:quote].delete(:author_name)
     params[:quote][:author] = author
   end
 end
