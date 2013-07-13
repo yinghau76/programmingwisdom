@@ -1,12 +1,13 @@
 .quote.row
   .quote-details
     .quote-text
-      #{quote.text}
+      = quote.text
     .quote-author
       - if quote.author
         = quote.author.name
       - unless quote.source.blank?
-        | , #{quote.source}
+        | , from&nbsp;
+        span.quote-source= quote.source
   - if footer
     .quoteFooter
       = link_to 'comments', quote
