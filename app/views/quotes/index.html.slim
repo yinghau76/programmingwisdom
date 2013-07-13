@@ -2,6 +2,6 @@
   .actions.btn-group
     = link_to 'New Quote', new_quote_path, class: 'btn btn-primary'
 .quotes
-  = paginate @quotes
+  = paginate @quotes, :window => 9
   - @quotes.each do |quote|
     = render :partial => 'quote', :locals => {:quote => quote, :footer => true}
