@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-ProgrammingwisdomRails4::Application.load_tasks
+ProgrammingWisdom::Application.load_tasks

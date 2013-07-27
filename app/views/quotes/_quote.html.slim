@@ -1,0 +1,16 @@
+.quote.row
+  .quote-details
+    .quote-text
+      = quote.text
+    .quote-author
+      - if quote.author
+        = quote.author.name
+      - unless quote.source.blank?
+        | , from&nbsp;
+        span.quote-source= quote.source
+  - if footer
+    .quoteFooter
+      = link_to 'comments', quote
+      - if user_signed_in?
+        = ", "
+        = link_to('edit', edit_quote_path(quote))

@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title Programming Wisdom
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  body
+    = render 'navbar'
+    .container
+      - if notice
+        .alert.alert-success= notice
+      - if alert
+        .alert= alert
+      = yield
