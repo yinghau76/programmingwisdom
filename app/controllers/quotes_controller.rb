@@ -6,6 +6,10 @@ class QuotesController < ApplicationController
     redirect_to "/", alert: 'You dont have enough permissions to be here' unless user_signed_in?
   end
 
+  def quote_params
+    params.require(:quote).permit(:text, :author, :source)
+  end
+
   # GET /quotes
   # GET /quotes.json
   def index
@@ -52,8 +56,8 @@ class QuotesController < ApplicationController
   # POST /quotes
   # POST /quotes.json
   def create
-    update_author_param(params)
-    @quote = Quote.new(params[:quote])
+    @quote = Quote.new(quote_params)
+    update_author(@quote)
 
     respond_to do |format|
       if @quote.save
@@ -70,10 +74,10 @@ class QuotesController < ApplicationController
   # PUT /quotes/1.json
   def update
     @quote = Quote.find(params[:id])
-    update_author_param(params)
+    update_author(@quote)
 
     respond_to do |format|
-      if @quote.update_attributes(params[:quote])
+      if @quote.update_attributes(quote_params)
         format.html { redirect_to @quote, notice: 'Quote was successfully updated.' }
         format.json { head :no_content }
       else
@@ -97,9 +101,7 @@ class QuotesController < ApplicationController
 
   private
 
-  def update_author_param(params)
-    author = Author.where(name: params[:quote][:author_name]).first_or_create
-    params[:quote].delete(:author_name)
-    params[:quote][:author] = author
+  def update_author(quote)
+    quote.author = Author.where(name: params[:quote][:author_name]).first_or_create
   end
 end
