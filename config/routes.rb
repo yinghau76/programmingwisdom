@@ -5,7 +5,12 @@ ProgrammingWisdom::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   devise_for :users
 
-  resources :quotes
+  resources :quotes do
+    collection do
+      get 'authors'
+    end
+  end
+
 
   # You can have the root of your site routed with "root"
   root 'quotes#index'

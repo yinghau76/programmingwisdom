@@ -1,6 +1,5 @@
 class QuotesController < ApplicationController
-
-  before_filter :authenticate_user!, except: [:index, :show]
+  before_filter :authenticate_user!, except: [:index, :show, :authors]
 
   def authenticate_user!
     redirect_to "/", alert: 'You dont have enough permissions to be here' unless user_signed_in?
@@ -97,6 +96,11 @@ class QuotesController < ApplicationController
       format.html { redirect_to quotes_url }
       format.json { head :no_content }
     end
+  end
+
+  def authors
+    authors = (term = params[:q]) ? Author.basic_search(term) : Author.all
+    render json: authors.map(&:name)
   end
 
   private

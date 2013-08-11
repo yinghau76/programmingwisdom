@@ -18,3 +18,9 @@
     = f.text_field :source, class: 'input-wide'
   .actions
     = f.submit class: 'btn btn-primary'
+coffee:
+  $ ->
+    $('#quote_author_name').typeahead
+      source: (query, process) ->
+        $.get '/quotes/authors', { q: query }, (data) ->
+          process data
