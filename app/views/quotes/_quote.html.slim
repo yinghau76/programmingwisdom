@@ -12,5 +12,4 @@
     .quoteFooter
       = link_to icon('comment'), quote
       - if user_signed_in?
-        = ", "
         = link_to icon('edit'), edit_quote_path(quote)
