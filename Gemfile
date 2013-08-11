@@ -23,6 +23,7 @@ gem 'rails_admin'
 gem 'unicorn'
 gem 'kaminari'
 gem 'textacular', "~> 3.0", :require => 'textacular/rails'
+gem 'font-awesome-sass-rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

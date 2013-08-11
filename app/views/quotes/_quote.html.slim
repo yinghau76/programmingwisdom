@@ -10,7 +10,7 @@
         span.quote-source= quote.source
   - if footer
     .quoteFooter
-      = link_to 'comments', quote
+      = link_to icon('comment'), quote
       - if user_signed_in?
         = ", "
-        = link_to('edit', edit_quote_path(quote))
+        = link_to icon('edit'), edit_quote_path(quote)
