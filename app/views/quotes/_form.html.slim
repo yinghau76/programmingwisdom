@@ -3,7 +3,7 @@
     #error_explanation
       h2
         = pluralize(@quote.errors.count, "error")
-        | prohibited this quote from being saved:
+        |  prohibited this quote from being saved:
       ul
         - @quote.errors.full_messages.each do |msg|
           li= msg
