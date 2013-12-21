@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" hash="2937264738">
-    <data-source source="LOCAL" name="Rails programmingwisdom: development" product="PostgreSQL" version="9.2.2" jdbc-version="3.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.1 JDBC3 (build 901)" uuid="fe15b104-e41f-4e9d-befa-608e218dc8e4">
-      <identifier-quote-string>&quot;</identifier-quote-string>
+    <data-source source="LOCAL" name="Rails programmingwisdom: development" uuid="fe15b104-e41f-4e9d-befa-608e218dc8e4">
+      <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://127.0.0.1/programmingwisdom_development</jdbc-url>
       <user-name>patrick</user-name>
@@ -15,8 +15,8 @@
         </library>
       </libraries>
     </data-source>
-    <data-source source="LOCAL" name="Rails programmingwisdom: test" product="PostgreSQL" version="9.2.2" jdbc-version="3.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.1 JDBC3 (build 901)" uuid="9bd74780-e0f4-4164-ab98-8430c3419576">
-      <identifier-quote-string>&quot;</identifier-quote-string>
+    <data-source source="LOCAL" name="Rails programmingwisdom: test" uuid="9bd74780-e0f4-4164-ab98-8430c3419576">
+      <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://127.0.0.1/programmingwisdom_test</jdbc-url>
       <user-name>patrick</user-name>
@@ -29,7 +29,8 @@
         </library>
       </libraries>
     </data-source>
-    <data-source source="LOCAL" name="Rails programmingwisdom: production" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="b24974d1-71e3-4c0e-a6d3-52bf5a33da7b">
+    <data-source source="LOCAL" name="Rails programmingwisdom: production" uuid="b24974d1-71e3-4c0e-a6d3-52bf5a33da7b">
+      <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://127.0.0.1/programmingwisdom_production</jdbc-url>
       <user-name>patrick</user-name>
