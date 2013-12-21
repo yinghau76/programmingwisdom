@@ -12,7 +12,7 @@ class Quote < ActiveRecord::Base
 
     @possible_quotes.each do |quote|
       distance = Text::Levenshtein.distance(text, quote.text)
-      if distance < 16
+      if distance < self.text.size / 8
         errors.add(:text, "possibly duplicated to another quote (distance = #{distance}): #{quote.text}")
         break
       end
