@@ -2,6 +2,7 @@ require 'test_helper'
 
 class QuotesControllerTest < ActionController::TestCase
   setup do
+    sign_in users(:one)
     @quote = quotes(:one)
   end
 
@@ -18,7 +19,7 @@ class QuotesControllerTest < ActionController::TestCase
 
   test "should create quote" do
     assert_difference('Quote.count') do
-      post :create, quote: {  }
+      post :create, quote: { text: 'First make it run, then make it run fast.', author_name: 'Author' }
     end
 
     assert_redirected_to quote_path(assigns(:quote))
@@ -35,8 +36,8 @@ class QuotesControllerTest < ActionController::TestCase
   end
 
   test "should update quote" do
-    put :update, id: @quote, quote: {  }
-    assert_redirected_to quote_path(assigns(:quote))
+    put :update, id: @quote, quote: {  author_name: 'Author' }
+    assert_response :success
   end
 
   test "should destroy quote" do
