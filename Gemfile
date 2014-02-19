@@ -23,7 +23,7 @@ gem 'devise'
 gem 'rails_admin'
 gem 'unicorn'
 gem 'kaminari'
-gem 'textacular', "~> 3.0", :require => 'textacular/rails'
+gem 'textacular', "~> 3.1.0", :require => 'textacular/rails'
 gem 'text'
 
 # Use SCSS for stylesheets

@@ -3,5 +3,5 @@ h1 Editing quote
 
 .btn-group
   = link_to 'Show', @quote, class: 'btn btn-small'
-  = link_to 'Delete', @quote, method: :delete, class: 'btn btn-small', confirm: 'Are you sure?'
+  = link_to 'Delete', @quote, method: :delete, class: 'btn btn-small', data: {confirm: 'Are you sure?'}
   = link_to 'Back', quotes_path, class: 'btn btn-small'
